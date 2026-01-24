@@ -1,0 +1,109 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+html,body{
+    
+}
+.navbar{
+   display: flex;
+  
+    
+    height: 6%;
+    width: 100%;
+    border : 1px solid black;
+   
+    
+}
+.nav-list{
+    display: flex;
+    gap: 6rem;
+    margin-left: 70px;
+    font-size: large;
+    
+
+}
+.navbar-btn{
+   margin-right: 20px;
+   
+}
+.login btn{
+    margin-right: 30px;
+}
+.text{
+    height: 50px;
+    width: 550px;
+    /* border: 1px solid black; */
+    margin-top: 50px;
+    margin-left: 500px;
+}
+.contact{
+    margin-top: 15%;
+    height: 30px;
+    width: 100%;
+    /* border: 1px solid black; */
+   
+}
+.circle{
+    
+    margin-left: 50px;
+    border-radius: 50%;
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+    
+}
+.contact h6{
+    margin-left:400px;
+}
+
+
+.form {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    width: 450px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-content {
+    width: 100%;
+}
+
+.form-content td {
+    padding: 10px;
+    color: #181616;
+}
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+
+
+
+input[type="submit"] {
+    background: #4facfe;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background: #007bff;
+}
