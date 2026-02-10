@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Bookings</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        margin: 0;
+        background-color: #f2f4f7;
+        color: #333;
+    }
+
+    .page {
+        padding: 30px 40px;
+    }
+
+    .page h2 {
+        margin-bottom: 20px;
+        font-size: 22px;
+        color: #2c3e50;
+    }
+
+    .table-wrapper {
+        background: #ffffff;
+        border-radius: 6px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        background-color: #34495e;
+        color: #ffffff;
+    }
+
+    thead th {
+        padding: 12px;
+        font-size: 13px;
+        text-align: left;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    tbody td {
+        padding: 12px;
+        font-size: 14px;
+        border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:hover {
+        background-color: #f7f9fb;
+    }
+
+    .status {
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .Completed {
+        background-color: #eafaf1;
+        color: #27ae60;
+    }
+
+    .Pending {
+        background-color: #fff6e5;
+        color: #e67e22;
+    }
+
+    .empty-row {
+        text-align: center;
+        padding: 25px;
+        color: #888;
+        font-size: 14px;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+    <h2>My Bookings</h2>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer</th>
+                    <th>Vehicle No</th>
+                    <th>Service Type</th>
+                    <th>Service Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody id="bookingTable">
+                <!-- backend data -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+fetch("myBookings")
+    .then(response => response.json())
+    .then(data => {
+        const table = document.getElementById("bookingTable");
+        table.innerHTML = "";
+
+        if (!data || data.length === 0) {
+            table.innerHTML = `
+                <tr>
+                    <td colspan="6" class="empty-row">
+                        No bookings available
+                    </td>
+                </tr>
+            `;
+            return;
+        }
+
+        data.forEach(b => {
+            table.innerHTML += `
+                <tr>
+                    <td>${b.booking_id}</td>
+                    <td>${b.customer_name}</td>
+                    <td>${b.vehicle_no}</td>
+                    <td>${b.service_type}</td>
+                    <td>${b.service_date}</td>
+                    <td>
+                        <span class="status ${b.status}">
+                            ${b.status}
+                        </span>
+                    </td>
+                </tr>
+            `;
+        });
+    })
+    .catch(() => {
+        document.getElementById("bookingTable").innerHTML = `
+            <tr>
+                <td colspan="6" class="empty-row">
+                    Error loading data
+                </td>
+            </tr>
+        `;
+    });
+</script>
+
+</body>
+</html>

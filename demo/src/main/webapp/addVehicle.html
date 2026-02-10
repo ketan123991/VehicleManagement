@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Vehicle</title>
+    <link rel="stylesheet" href="addVehicle.css">
+</head>
+<body>
+
+<div class="content-area">
+    <div class="card">
+        <h2>Add Vehicle</h2>
+
+        <!-- action must match @WebServlet -->
+        <form action="addVehicle" method="post">
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Vehicle Number</label>
+                    <input type="text" name="vehicleNumber" placeholder="MH12 AB 1234" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Vehicle Type</label>
+                    <select name="vehicleType" required>
+                        <option value="">Select</option>
+                        <option>Car</option>
+                        <option>Bike</option>
+                        <option>Truck</option>
+                        <option>Bus</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Brand</label>
+                    <input type="text" name="brand" placeholder="Honda, Tata" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" name="model" placeholder="City, Nexon" required>
+                </div>
+            </div>
+
+            <div class="row single">
+                <div class="form-group">
+                    <label>Manufacturing Year</label>
+                    <input type="number" name="year" placeholder="2024" required>
+                </div>
+            </div>
+
+            <button type="submit" class="btn">Add Vehicle</button>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

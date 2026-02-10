@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vehicle Repair Management</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 230px;
+            background: linear-gradient(#34495e, #2c3e50);
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 12px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+
+        .sidebar a:hover {
+            background: #1abc9c;
+        }
+
+        /* MAIN AREA */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(to right, #5f7c8a, #3f5c6d);
+            color: white;
+            padding: 15px 25px;
+        }
+
+        /* CONTENT */
+        iframe {
+            flex: 1;
+            border: none;
+            background: #f4f6f9;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>Vehicle System</h2>
+
+        <a href="pages/home.html" target="contentFrame">Dashboard</a>
+        <a href="addVehicle.html" target="contentFrame">Add Vehicle</a>
+        <a href="bookingservice.html" target="contentFrame">Book Service</a>
+        <a href="mybooking.html" target="contentFrame">My Bookings</a>
+        <a href="pages/bills.html" target="contentFrame">Bills</a>
+        <a href="homepage.html">Logout</a>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="main">
+
+        <div class="header">
+            <h1>Vehicle Repair Management System</h1>
+        </div>
+
+        <!-- THIS IS THE MAGIC -->
+        <iframe name="contentFrame" src="pages/home.html"></iframe>
+
+    </div>
+</div>
+
+</body>
+</html>

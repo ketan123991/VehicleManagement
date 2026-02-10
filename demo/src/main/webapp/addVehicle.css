@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #f4f6f9;
+}
+
+/* Right side area */
+.content-area {
+    margin-left: 30px;   /* sidebar remains unchanged */
+    padding: 40px;
+    margin-top: 50px;
+}
+
+/* Card */
+.card {
+    max-width: 850px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    margin-bottom: 25px;
+    color: #2c3e50;
+}
+
+/* Form layout */
+.row {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.row.single {
+    max-width: 400px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #27ae60;
+}
+
+/* Button */
+.btn {
+    margin-top: 20px;
+    padding: 12px 22px;
+    background: #2ecc71;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #27ae60;
+}

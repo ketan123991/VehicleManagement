@@ -3,99 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="homepage.css">
+    <title>Login</title>
+
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-}
+        body{
+            height: 100vh;
+            background-color: rgb(14, 235, 235);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-body {
-    height:100vh;
-    background: linear-gradient(to right, #48a8fc, #00f2fe);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        #login{
+            height: 400px;
+            width: 400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            padding: 30px;
+        }
+
+        #set{
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        table{
+            width: 100%;
+        }
+
+        td{
+            padding: 10px;
+        }
+
+        input[type="email"],
+        input[type="password"]{
+            width: 100%;
+            padding: 8px; 
+        }
+        input[type="submit"]{
+            width: 100%;
+            padding: 10px;
+            background-color: rgb(14, 235, 235);
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover{
+            background-color: rgb(10, 200, 200);
+        }
     </style>
 </head>
+
 <body>
+    <div id="login">
+        <h3 id="set">Login</h3>
 
-<div class="form">
-    <h1 style="text-align:center;">REGISTER</h1>
+        <form action="login" method="post">
+            <table>
+                <tr>
+                    <td>Email</td>
+                    <td>
+                        <input type="email" name="email" placeholder="Enter Email" required>
+                    </td>
+                </tr>
 
-   <form action="register" method="post">
-        <table class="form-content">
+                <tr>
+                    <td>Password</td>
+                    <td>
+                        <input type="password" name="password" placeholder="Enter Password" required>
+                    </td>
+                </tr>
 
-            <tr>
-                <td><h3>First Name</h3></td>
-                <td><input type="text" name="first_name" required autofocus></td>
-            </tr>
-              <tr>
-                <td><h3> Last Name</h3></td>
-                <td><input type="text" name="last_name" required autofocus></td>
-            </tr>
-              <tr>
-               
-            <tr>
-                <td><h3>Email</h3></td>
-                <td><input type="email" name="email" required></td>
-            </tr>
-
-            <tr>
-                <td><h3>Address</h3></td>
-                <td><input type="text" name="address" required></td>
-            </tr>
-
-           
-
-            <tr>
-                <td><h3>Mobile Number</h3></td>
-                <td>
-                    <input type="tel" name="mobile"
-                           pattern="[0-9]{10}"
-                           placeholder="10-digit number"
-                           required>
-                </td>
-            </tr>
-
-           <tr>
-                <td><h3>Password</h3></td>
-                <td>
-                    <input type="password"
-                        name="password"
-                        placeholder="Enter password"
-                        required
-                        minlength="6">
-                </td>
-            </tr>
-
-            <tr>
-                <td><h3>Confirm Password</h3></td>
-                <td>
-                    <input type="password"
-                        name="confirm_password"
-                        placeholder="Re-enter password"
-                        required
-                        minlength="6">
-                </td>
-            </tr>
-
-
-             
-            <tr>
-                <td colspan="2" style="text-align:center;">
-                    <input type="submit" value="Submit">
-                </td>
-            </tr>
-
-        </table>
-    </form>
-</div>
-
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Login">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>
